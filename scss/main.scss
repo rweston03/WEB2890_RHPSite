@@ -1,0 +1,426 @@
+@import "functions";
+@import "variables";
+
+$font-family-sans-serif: 'Poppins', sans-serif;
+$enable-responsive-font-sizes: true;
+
+$green: #a1c33a;
+$light-green: #bee645;
+$dark-green: #79910D;
+$blue: #097eb0;
+$light-blue: #0BA2E0;
+$dark-blue: #054e6e;
+$grey: #D9D9D9;
+$dark-grey: #333333;
+$yellow: #fac52d;
+$light-yellow: lighten($yellow, 35%);
+$dark: $dark-grey;
+
+$theme-colors: (
+    "primary": $dark-blue,
+    "secondary": $grey,
+    "success": $green,
+    "info": $light-yellow,
+    "warning": $blue,
+    "danger": $dark-green,
+    "green": $green
+);
+
+$link-color: theme-color("green");
+$link-hover-color: darken($link-color, 15%);
+
+$nav-link-padding-x: 2rem;
+
+$text-muted: $grey;
+$text-danger: $dark-blue !important;
+
+$progress-height: 2rem;
+
+@import "bootstrap";
+
+/**************************
+GLOBAL STYLE RULES
+**************************/
+body
+{
+    width: 100%;
+    height: 100%;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    font-family: $font-family-sans-serif;
+    overflow-x: hidden;
+}
+
+a.btn {
+    color: black;
+}
+
+a.btn:hover {
+    color: white !important;
+}
+
+h1, h2, h3 {
+    font-family: 'Kanit', sans-serif;
+    color: $dark-blue;
+    letter-spacing: .2rem;
+}
+
+.display-2 {
+    font-weight: 900 !important;
+    letter-spacing: .2rem;
+}
+
+h2 {
+    font-size: 4rem;
+    font-weight: 800;
+}
+
+h3 {
+    font-size: 2.618rem;
+    font-weight: 700;
+}
+
+h4 {
+    font-family: 'Kanit', Arial, Helvetica, sans-serif;
+    font-size: 1.618rem;
+    font-weight: 600;
+}
+
+section {
+    min-height: 100vh;
+}
+
+.h-50 {
+    min-height: 50vh;
+    max-height: 50vh;
+}
+
+.h-65 {
+    min-height: 65vh;
+}
+
+.h-80 {
+    min-height: 80vh;
+}
+
+.h-100 {
+    min-height: inherit;
+}
+
+.w-60 {
+    min-width: 60%;
+    width: 60%;
+    max-width: 60%;
+}
+
+.w-80 {
+    min-width: 80%;
+    width: 80%;
+    max-width: 80%;
+}
+
+.w-100 {
+    min-width: 100%;
+    width: 100%;
+    max-width: 100%;
+}
+
+i.text-green:hover {
+    color: darken($green, 30%);
+}
+
+/*****************************
+SECTION STYLE RULES
+*****************************/
+
+section {
+    min-height: 100vh;
+}
+
+/*****************************
+HEADER STYLE RULES
+*****************************/
+
+.navbar {
+    box-shadow: 0px 3px 3px $gray-800;
+}
+
+.nav-link {
+    color: $green !important;
+}
+
+.navbar-brand {
+    padding: 1% 0px;
+}
+
+.nav-link:hover {
+    font-weight: bold;
+    color: $green !important;
+    text-shadow: 1px 2px darken($green, 30%);
+    border-bottom: 2px solid $green;
+}
+
+header h1 {
+    text-shadow: 2px 2px black;
+}
+
+#header.masthead {
+    background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("../img/house_pics/property6-2000x1080.jpg");
+    height: 100vh;
+}
+
+.header-par {
+    font-size: 1.5rem;
+}
+/*****************************
+WHY SECTION STYLES
+*****************************/
+.why-icon {
+    font-size: 4rem;
+    color: lighten($light-green, 30%);
+    padding-top: 3%;
+}
+
+.why-card {
+    border-radius: 10%;
+    height: 250px;
+    width: 300px;
+    text-align: left;
+    padding: 1%;
+    box-shadow: 2px 3px 3px $dark-green;
+}
+
+/*****************************
+HOW IT WORKS SECTION STYLES
+*****************************/
+
+.step {
+    height: 3rem;
+    width: 3rem;
+    border-radius: 50%;
+    border: 5px solid $green;
+    font-size: 2rem;
+}
+
+.step-icon {
+    font-size: 4rem;
+    color: $green;
+}
+
+/*****************************
+BUTTON SHUTTER STYLE RULES
+*****************************/
+
+/* Shutter Out Horizontal */
+.hvr-shutter-out-horizontal {
+    display: inline-block;
+    vertical-align: middle;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+    position: relative;
+    background: $yellow;
+    -webkit-transition-property: color;
+    transition-property: color;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+  }
+  .hvr-shutter-out-horizontal:before {
+    content: "";
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: $blue;
+    -webkit-transform: scaleX(0);
+    transform: scaleX(0);
+    -webkit-transform-origin: 50%;
+    transform-origin: 50%;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-timing-function: ease-out;
+    transition-timing-function: ease-out;
+  }
+
+  .footer-btn.hvr-shutter-out-horizontal, .hero-btn.hvr-shutter-out-horizontal  {
+    background: $yellow;
+    color: $dark-grey;
+  }
+
+  .footer-btn.hvr-shutter-out-horizontal:before {
+    background: $light-green;
+  }
+
+  .hero-btn.hvr-shutter-out-horizontal:before {
+    background: $light-green;
+  }
+  
+  .hvr-shutter-out-horizontal:hover, .hvr-shutter-out-horizontal:focus, .hvr-shutter-out-horizontal:active {
+    color: black;
+  }
+  .hvr-shutter-out-horizontal:hover:before, .hvr-shutter-out-horizontal:focus:before, .hvr-shutter-out-horizontal:active:before {
+    -webkit-transform: scale(1.05, 1.05);
+    transform: scale(1.05, 1.05);
+  }
+
+  /*****************************
+  PARALAX STYLE RULES
+  *****************************/
+
+  $list1: rgba(0,0,0,.5) 10%, rgba(0,0,0,.5) 10%;
+
+    @mixin gradient($direction, $list) {
+        background: -webkit-linear-gradient($direction, $list);
+        background: -moz-linear-gradient($direction, $list);
+        background: -o-linear-gradient($direction, $list);
+        background: linear-gradient($direction, $list); 
+    }
+
+    #how1 {
+        background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("../img/house_pics/property4-2000x1080.jpg") center/cover no-repeat fixed;
+    }
+
+    #how2 {
+        background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("../img/house_pics/property4-800x1200.jpg") center/cover no-repeat fixed;
+    }
+
+    #testimonials {
+        background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("../img/house_pics/property6-2000x1080.jpg") center/cover no-repeat fixed;
+    }
+
+    #search {
+        background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("../img/house_pics/property7-search-long.jpg") center/cover no-repeat fixed;
+    }
+
+    /*************************************
+    PROPERTY SECTION STYLES
+    *************************************/
+    .prop-card {
+        border: none;
+        box-shadow: 3px 4px 3px darken($dark-green, 15%);
+    }
+    .card-footer {
+        background: $blue;
+        color: $light;
+    }
+    .prop-icon {
+        font-size: 2.5rem;
+        color: $light-green;
+    }
+    .footer-btn {
+        background-color: $yellow;
+        border: none;
+        border-radius: 0px;
+    }
+
+
+    /************************************
+    TESTIMONIAL CAROUSEL STYLES
+    ************************************/
+
+    .carousel-control-prev {
+         margin-left: -50px;
+    }
+
+    .carousel-control-next {
+        margin-right: -50px;
+    }
+
+    /************************************
+    FAQ STYLES
+    ************************************/
+    #accordion > .card > .card-header {
+        background-color: lighten($dark-blue, 8%);
+        color: white;
+    }
+
+    #accordion > .card > .collapse > .card-body {
+        background-color: lighten($light, 30%);
+        color: $dark-grey;
+    }
+
+    .btn-link {
+        font-size: 1.25rem;
+        color: $light-green;
+    }
+
+    .btn-link:hover {
+        color: $light-green;
+    }
+
+    /************************************
+    SEARCH STYLES
+    ************************************/
+    .search-card {
+        box-shadow: 3px 3px 3px $dark-green;
+    }
+
+    /************************************
+    FOOTER STYLES
+    ************************************/
+    .footer-icon {
+        font-size: 2.5rem;
+        color: $light-green;
+    }
+
+
+    /***********************************
+    MEDIA QUERIES
+    ***********************************/
+
+    @media screen and (max-width: 768px) {
+        #header.masthead {
+            background: linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),url("../img/house_pics/property6-800x1200.jpg");
+            height: 100vh;
+        }
+
+        h2 {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+        
+        h3 {
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        h4 {
+            font-family: 'Kanit', Arial, Helvetica, sans-serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+        }
+
+        #testimonials {
+            background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("../img/house_pics/property6-800x1200.jpg") center/cover no-repeat fixed;
+        }
+    
+        #search {
+            background: linear-gradient(rgba(0,0,0,.6),rgba(0,0,0,.6)),url("../img/house_pics/property7-800x1200.jpg") center/cover no-repeat fixed;
+        }
+
+    }
+
+    @media screen and (max-width: 1200px) {
+        #how2 {
+            display: block;
+        }
+        #how1 {
+            display: none;
+        }
+    }
+
+    @media screen and (min-width: 1200px) {
+        #how2 {
+            display: none;
+        }
+        #how1 {
+            display: block;
+        }
+    }

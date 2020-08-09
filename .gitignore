@@ -1,0 +1,11 @@
+.env
+.DS_Store
+.idea
+logs
+*.log
+img
+scss/_*
+scss/bootstrap*
+js
+css/bootstrap*
+*.answer.*
